@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="../../css/styleHome.css">
+    <script src="../../js/user-auth.js"></script>
+</head>
+<body>
+
+
+    <div id="main-header"></div>
+    <script src="../../js/header.js"></script>
+    <div style="display: flex; justify-content: space-between; align-items: center; padding:20px 10px 1px 20px">
+        <button class="book-button" onclick="window.location.href='home-page.html'">Home</button>
+        <!--<div id="pagination" class="pagination"></div>-->
+        <div>
+            <input type="text" id="searchInput" placeholder="Search by name..." style="padding: 6px; border-radius: 6px; border: 1px solid #ccc;">
+            <button onclick="searchEvents()" style="padding: 6px 12px; border-radius: 6px; margin-left: 4px;">Search</button>
+        </div>
+    </div>
+    <div class="event-container" id="events-container">
+
+    </div>
+    
+
+    <script src="../../js/home.js"></script>
+</body>
+</html>

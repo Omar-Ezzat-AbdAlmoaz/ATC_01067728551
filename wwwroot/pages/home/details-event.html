@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Event Details</title>
+    <link rel="stylesheet" href="../../css/style.css" />
+    <script src="../../js/user-auth.js"></script>
+
+</head>
+<body>
+
+    <div id="main-header"></div>
+    <script src="../../js/header.js"></script>
+
+
+    <div class="container">
+        <h2>Event Details</h2>
+        <div class="event-status">
+            <button id="bookButton" class="booked-label">Book Now</button>
+            <span id="bookedLabel" class="booked-label" style="display:none;">Booked</span>
+            <span id="ticketCountLabel" class="ticket-count">Tickets: <span id="ticketCount"></span></span>
+        </div>
+        <div id="event-details">
+            <p><strong>Name:</strong> <span id="eventName"></span></p>
+            <p><strong>Description:</strong> <span id="description"></span></p>
+            <p><strong>Category:</strong> <span id="category"></span></p>
+            <p><strong>Date:</strong> <span id="date"></span></p>
+            <p><strong>Venue:</strong> <span id="venue"></span></p>
+            <p><strong>Price:</strong> <span id="price"></span> EGP</p>
+            <p><img id="image" style="max-width: 100%; max-height: 400px;" src="" alt="Event Image" class="event-image"></p>
+        </div>
+
+        <div class="btn-group">
+            <button onclick="window.location.href='/pages/home/home-page.html'">Back to List</button>
+
+        </div>
+
+
+
+    </div>
+    <script src="../../js/details-event.js"></script>
+</body>
+</html>

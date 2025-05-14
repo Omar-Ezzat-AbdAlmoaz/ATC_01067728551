@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Register</title>
+    <link rel="stylesheet" href="../../css/style.css"/>
+</head>
+<body>
+   
+    <div class="container">
+        <h2>Register</h2>
+        <form id="registerForm">
+            <input type="text" id="fullName" placeholder="Full Name" required maxlength="100" />
+            <input type="email" id="email" placeholder="Email" required />
+            <input type="password" id="password" placeholder="Password" required minlength="8">
+            <button type="submit">Register</button>
+        </form>
+        <p>Already have an account? <a href="../../pages/auth/login.html">Sign In</a></p>
+        <div id="error" style="color: red; margin-top: 10px;"></div>
+        <div id="success" style="color: green; margin-top: 10px;"></div>
+    </div>
+    <script src="../../js/register.js"></script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Create Event</title>
+    <link rel="stylesheet" href="../../css/style.css" />
+    <script src="../../js/admin-auth.js"></script>
+</head>
+<body>
+    <div id="main-header"></div>
+    <script src="../../js/header.js"></script>
+
+    <div class="container">
+        <h2>New Event</h2>
+        <form id="create-event-form" enctype="multipart/form-data">
+            <label>Event Name:</label>
+            <input type="text" name="eventName" required>
+            <span class="error" data-error-for="eventName"></span>
+
+            <label>Description:</label>
+            <textarea name="description"></textarea>
+            <span class="error" data-error-for="description"></span>
+
+            <label>Category:</label>
+            <input type="text" name="category">
+            <span class="error" data-error-for="category"></span>
+
+            <label>Date:</label>
+            <input type="datetime-local" name="date" required>
+            <span class="error" data-error-for="date"></span>
+
+            <label>Venue:</label>
+            <input type="text" name="venue" required>
+            <span class="error" data-error-for="venue"></span>
+
+            <label>Price:</label>
+            <input type="number" name="price" min="0" required>
+            <span class="error" data-error-for="price"></span>
+
+            <label>Upload Image:</label>
+            <input type="file" name="image" id="imageFile" accept="image/*">
+            <span class="error" data-error-for="image"></span>
+
+            <button type="submit">Add</button>
+        </form>
+        <div class="btn-group">
+            <button onclick="window.location.href='/pages/admin-panal/view.html'">Back to List</button>
+        </div>
+    </div>
+
+    <script src="../../js/create.js"></script>
+</body>
+</html>
