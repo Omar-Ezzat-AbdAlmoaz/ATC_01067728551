@@ -1,7 +1,8 @@
 A README file for each frontend and backend with clear setup instructions
 # Frontend 
 
-This is the frontend part of the Event Booking System, built using **HTML**, **CSS**, and **JavaScript**. It communicates with the backend ASP.NET Core API using HTTP requests.
+This is the frontend part of the Event Booking System, built using **HTML**, **CSS**, and **JavaScript**.
+It communicates with the backend ASP.NET Core API using HTTP requests.
 
 ---
 
@@ -10,38 +11,42 @@ This is the frontend part of the Event Booking System, built using **HTML**, **C
 frontend/
 │
 ├── CSS/
-│   ├── style.css            # General styles
-│   └── home.css             # Styles for home and event cards
+│   ├── style.css           # General styles (buttons, layout, fonts)
+│   └── home.css            # Home & event card specific styling
 │
 ├── JS/
-│   ├── admin-auth.js        # Admin authentication check
-│   ├── create.js            # Handle event creation
-│   ├── delete.js            # Handle event deletion
-│   ├── details.js           # Show event details
-│   ├── edit.js              # Handle event editing
-│   ├── header.js            # Common header rendering
-│   ├── home.js              # Logic for home page
-│   ├── login.js             # Handle user login
-│   ├── register.js          # Handle user registration
-│   ├── read.js              # Admin read events logic
-│   ├── user-auth.js         # User authentication check
-│   └── view.js              # Admin Handle events 
+│   ├── admin-auth.js       # Check and restrict access to admin pages
+│   ├── create.js           # Logic for creating new events
+│   ├── delete.js           # Delete event logic
+│   ├── details.js          # Show event details to user
+│   ├── edit.js             # Update/edit event logic
+│   ├── header.js           # Render common headers (admin/user)
+│   ├── home.js             # Show list of events for user
+│   ├── login.js            # Handle user login form
+│   ├── register.js         # Handle user registration form
+│   ├── read.js             # Admin view of all events
+│   ├── user-auth.js        # Check and restrict access to user pages
+│   └── view.js             # Admin panel - event view management
 │
 ├── pages/
-│   ├── welcom-page.html     # Landing page with login/register options
-│   ├── cong.html            # Congratulation page after booking
+│   ├── welcom-page.html         # Landing page (login/register links)
+│   ├── cong.html                # Congratulations page after booking
+│
 │   ├── auth/
-│   │   ├── login.html
-│   │   └── register.html
+│   │   ├── login.html           # Login form
+│   │   └── register.html        # Registration form
+│
 │   ├── home/
-│   │   ├── home-page.html  # View all events (user) 
-│   │   └── details-event.html
+│   │   ├── home-page.html       # Main page for users showing events
+│   │   └── details-event.html   # Detailed view of a single event
+│
 │   └── admin-panal/
-│       ├── create.html
-│       ├── delete.html
-│       ├── edit.html
-│       ├── read.html
-│       └── view.html      # View/manage events (admin)  
+│       ├── create.html          # Create new event
+│       ├── delete.html          # Delete confirmation
+│       ├── edit.html            # Edit existing event
+│       ├── read.html            # Read/view event info
+│       └── view.html            # Admin event control panel
+
 ## 🚀 How to Run Frontend
 
 ### 🧱 Option 1: Using Live Server (Recommended)
@@ -54,7 +59,8 @@ frontend/
 2. Make sure the backend API is running at `http://localhost:5000` or change the API URL in your JavaScript accordingly.
 
 # Backend 
-This is the backend API for the Event Booking System, built using ASP.NET Core (.NET 8). It handles user registration, login, JWT-based authentication, event management, and booking logic.
+This is the backend API for the Event Booking System, built using ASP.NET Core (.NET 8). 
+It handles user registration, login, JWT-based authentication, event management, and booking logic.
 
 📦 Technologies Used
 ASP.NET Core Web API (.NET 8)
@@ -160,4 +166,84 @@ Make sure the frontend uses the JWT token from login to access protected APIs.
 
 - JWT token is stored in `localStorage`
 - The token is included in API requests via the `Authorization: Bearer <token>` header
+
+
+🚀 System Usage Scenario
+Here’s a walkthrough of what happens when someone starts using the system:
+
+🏁 Step 1: Open the Application
+The user opens the frontend by launching:
+/pages/welcom-page.html
+They land on the Welcome Page which provides two options:
+
+🔐 Login
+
+📝 Register
+
+👤 Step 2: Authentication
+Option A - New User:
+Clicks Register
+
+Fills in:
+
+Full name
+
+Email
+
+Password
+
+On successful registration:
+
+User is redirected to the Login Page
+
+Option B - Existing User:
+Clicks Login
+
+Enters email and password
+
+🔁 Step 3: Role-Based Redirection
+After login, the system checks the user’s role from the JWT token:
+
+✅ If User (normal):
+Redirected to:
+
+/pages/home/home-page.html
+Can:
+
+View list of available events
+
+Searsh in event by name
+
+Click any event for more details
+
+Book an event (if available)
+
+On successful booking → redirected to:
+
+/pages/cong.html
+🛠️ If Admin:
+Redirected to:
+
+/pages/admin-panal/view.html
+Admin Panel Options:
+
+Create a new event → create.html
+
+Edit existing events → edit.html
+
+Delete events → delete.html
+
+View and read all event details → view.html, read.html
+
+🔐 Authorization Logic
+All admin pages are protected using admin-auth.js
+
+All user pages are protected using user-auth.js
+
+Unauthorized access will redirect to the welcome page
+
+🔓 Logout
+At any time, the user/admin can log out
+
+This clears the token and returns them to the Welcome Page
 
