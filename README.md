@@ -53,7 +53,7 @@ frontend/
 1. Open `welcome.html` or `login.html` in your browser directly.
 2. Make sure the backend API is running at `http://localhost:5000` or change the API URL in your JavaScript accordingly.
 
-🧠 Backend - Event Booking System
+# Backend 
 This is the backend API for the Event Booking System, built using ASP.NET Core (.NET 8). It handles user registration, login, JWT-based authentication, event management, and booking logic.
 
 📦 Technologies Used
